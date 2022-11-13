@@ -19,7 +19,7 @@ class AboutDialog(QDialog):
 
         layout = QVBoxLayout()
 
-        title = QLabel("Mozarella Ashbadger")
+        title = QLabel("Youtube Playlists")
         font = title.font()
         font.setPointSize(20)
         title.setFont(font)
@@ -155,10 +155,10 @@ class MainWindow(QMainWindow):
         # More difficult! We only want to update the url when it's from the
         # correct tab
         browser.urlChanged.connect(lambda qurl, browser=browser:
-                                   self.update_urlbar(qurl, browser))
+        self.update_urlbar(qurl, browser))
 
         browser.loadFinished.connect(lambda _, i=i, browser=browser:
-                                     self.tabs.setTabText(i, browser.page().title()))
+        self.tabs.setTabText(i, browser.page().title()))
 
     def tab_open_doubleclick(self, i):
         if i == -1:  # No tab under the click
